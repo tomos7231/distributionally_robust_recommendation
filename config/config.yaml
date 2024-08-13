@@ -1,0 +1,25 @@
+hydra:
+  job:
+    chdir: true
+  run:
+    dir: ./result/${name}
+
+data:
+    name: "movielens" # movielens or r3 or book
+    test_size: 0.4
+    min_count_rating: 50 # movielensなら50、r3なら1
+prediction:
+    model: "MF"
+    k: 5
+    n_factors: 100
+    lr_all: 0.01
+    n_epochs: 20
+    reg_all: 0.1
+optimization:
+    kappa1: 0
+    kappa2: 1
+    N: 5
+evaluation:
+    thres_high_rating: 4
+seed: 42
+name: default_mv
