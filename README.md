@@ -15,3 +15,12 @@ rye config --set-bool behavior.use-uv=true
 rye sync
 ```
 
+In addition, this repository requires a mosek licence.
+If necessary, obtain the appropriate licence from [here](https://www.mosek.com/).
+
+
+## Formatter
+```
+rye run format
+```
+
