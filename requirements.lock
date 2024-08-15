@@ -9,3 +9,51 @@
 #   generate-hashes: false
 
 -e file:.
+annotated-types==0.7.0
+    # via pydantic
+antlr4-python3-runtime==4.9.3
+    # via hydra-core
+    # via omegaconf
+hydra-core==1.3.2
+    # via distributionally-robust-recommendation
+joblib==1.4.2
+    # via scikit-learn
+loguru==0.7.2
+    # via distributionally-robust-recommendation
+mosek==10.2.3
+    # via distributionally-robust-recommendation
+numpy==2.0.0
+    # via distributionally-robust-recommendation
+    # via mosek
+    # via pandas
+    # via scikit-learn
+    # via scipy
+omegaconf==2.3.0
+    # via hydra-core
+packaging==24.1
+    # via hydra-core
+pandas==2.2.2
+    # via distributionally-robust-recommendation
+pydantic==2.8.2
+    # via distributionally-robust-recommendation
+pydantic-core==2.20.1
+    # via pydantic
+python-dateutil==2.9.0.post0
+    # via pandas
+pytz==2024.1
+    # via pandas
+pyyaml==6.0.2
+    # via omegaconf
+scikit-learn==1.5.1
+    # via distributionally-robust-recommendation
+scipy==1.14.0
+    # via scikit-learn
+six==1.16.0
+    # via python-dateutil
+threadpoolctl==3.5.0
+    # via scikit-learn
+typing-extensions==4.12.2
+    # via pydantic
+    # via pydantic-core
+tzdata==2024.1
+    # via pandas

@@ -5,9 +5,9 @@ hydra:
     dir: ./result/${name}
 
 data:
-    name: "movielens" # movielens or r3 or book
+    name: "movielens"
     test_size: 0.4
-    min_count_rating: 50 # movielensなら50、r3なら1
+    min_count_rating: 50
 prediction:
     model: "MF"
     k: 5

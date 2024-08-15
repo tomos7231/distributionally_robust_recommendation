@@ -3,9 +3,17 @@ name = "distributionally-robust-recommendation"
 version = "0.1.0"
 description = "Add your description here"
 authors = [
-    { name = "tomos7231", email = "hoge" }
+    { name = "tomos7231"}
 ]
-dependencies = []
+dependencies = [
+    "pandas>=2.2.2",
+    "numpy>=2.0.0",
+    "mosek>=10.2.3",
+    "pydantic>=2.8.2",
+    "loguru>=0.7.2",
+    "hydra-core>=1.3.2",
+    "scikit-learn>=1.5.1",
+]
 readme = "README.md"
 requires-python = ">= 3.10"
 
@@ -15,7 +23,33 @@ build-backend = "hatchling.build"
 
 [tool.rye]
 managed = true
-dev-dependencies = []
+dev-dependencies = [
+    "ipykernel>=6.29.5",
+    "ipywidgets>=8.1.3",
+    "ruff>=0.5.1",
+]
+
+[tool.ruff.lint]
+fixable = ["ALL"]
+unfixable = []
+select = [
+    "F", # pyflakes
+    "E", # pycodestyle
+    "W", # pycodestyle warnings
+    "I", # isort
+]
+ignore = [
+    "E501", # line too long
+]
+
+[tool.ruff]
+include = ["*.ipynb", "*.py"]
+line-length = 120
+
+[tool.rye.scripts]
+format = { chain = [ "format:ruff", "format:ruff_check" ] }
+"format:ruff" = "ruff format ./"
+"format:ruff_check" = "ruff check ./ --fix"
 
 [tool.hatch.metadata]
 allow-direct-references = true
