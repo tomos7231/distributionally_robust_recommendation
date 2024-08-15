@@ -19,11 +19,7 @@ class DataPreprocessor:
         return df
 
     @staticmethod
-    def split_data(
-        df: pd.DataFrame, test_size: float, dataset_name: str, seed: int
-    ) -> pd.DataFrame:
+    def split_data(df: pd.DataFrame, test_size: float, dataset_name: str, seed: int) -> pd.DataFrame:
         if dataset_name == "movielens":
-            train_df, test_df = train_test_split(
-                df, test_size=test_size, random_state=seed, stratify=df["user_id"]
-            )
+            train_df, test_df = train_test_split(df, test_size=test_size, random_state=seed, stratify=df["user_id"])
             return train_df, test_df
