@@ -8,3 +8,15 @@ wheels/
 
 # venv
 .venv
+
+# ds store
+.DS_Store
+
+# data/
+data/
+
+# result/
+result/
+
+# notebook/
+notebook/
