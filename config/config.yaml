@@ -5,21 +5,34 @@ hydra:
     dir: ./result/${name}
 
 data:
-    name: "movielens"
+    name: "r3"
     test_size: 0.4
-    min_count_rating: 50
+    min_count_rating: 1
 prediction:
     model: "MF"
-    k: 5
+    k: 10
     n_factors: 100
     lr_all: 0.01
-    n_epochs: 20
+    n_epochs: 30
     reg_all: 0.1
 optimization:
-    kappa1: 0
-    kappa2: 1
-    N: 5
+    estimator: "INPUTE"
+    delta: 0.75
+    # DRO
+    kappa1: 0.5
+    kappa2: 0.5
+    N: 3
+    eps_inner: 1e-4
+    eps_outer: 1e-4
+    gamma: 1e-4
+    scale_gamma: 10
+    # RO
+    alpha: 0.0
+    gamma_mu: 2
+    gamma_sigma: 25
+    c_mu: 1.0
+    c_sigma: 0.2
 evaluation:
-    thres_high_rating: 4
+    thres_rating: 3
 seed: 42
-name: default_mv
+name: article_mv_cov42

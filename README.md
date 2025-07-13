@@ -1,18 +1,20 @@
 # distributionally-robust-recommendation
 
 ## Setup
-This repository is using rye.  
+This repository is using uv.  
 If you want to use this repository, please run the following command.
 
-1. install rye
-   - install instructions: https://rye-up.com/guide/installation/
-2. enable uv to speed up dependency resolution.
+1. install uv
 ```
-rye config --set-bool behavior.use-uv=true
+curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
-3. create a virtual environment
+2. install dependencies and create a virtual environment
 ```
-rye sync
+uv sync
+```
+3. activate the virtual environment (optional)
+```
+source .venv/bin/activate
 ```
 
 In addition, this repository requires a mosek licence.
@@ -21,6 +23,9 @@ If necessary, obtain the appropriate licence from [here](https://www.mosek.com/)
 
 ## Formatter
 ```
-rye run format
+./bin/format.sh
+# or run separately
+uv run ruff format ./
+uv run ruff check ./ --fix
 ```
 

@@ -20,14 +20,25 @@ class PredictionConfig:
 
 @dataclass
 class OptimizationConfig:
+    estimator: str = "DIAG"
+    delta: float = 0.5
     kappa1: float = 0.0
     kappa2: float = 1.0
     N: int = 10
+    eps_outer: float = 1e-5
+    eps_inner: float = 1e-5
+    gamma: float = 1.5
+    scale_gamma: float = 10.0
+    alpha: float = 0.5
+    gamma_mu: int = 0
+    gamma_sigma: int = 0
+    c_mu: float = 0.0
+    c_sigma: float = 0.0
 
 
 @dataclass
 class EvaluationConfig:
-    thres_high_rating: float = 4.0
+    thres_rating: float = 4.0
 
 
 @dataclass

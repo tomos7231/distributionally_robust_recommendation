@@ -7,12 +7,21 @@ authors = [
 ]
 dependencies = [
     "pandas>=2.2.2",
-    "numpy>=2.0.0",
-    "mosek>=10.2.3",
+    "mosek==11.0.6",
     "pydantic>=2.8.2",
     "loguru>=0.7.2",
     "hydra-core>=1.3.2",
     "scikit-learn>=1.5.1",
+    "omegaconf>=2.3.0",
+    "tqdm>=4.66.5",
+    "scikit-surprise>=1.1.4",
+    "numpy>=1.23.2,<2.0",
+    "cvxpy>=1.5.3",
+    "seaborn>=0.13.2",
+    "gurobipy>=11.0.3",
+    "japanize-matplotlib>=1.1.3",
+    "pyscipopt>=5.2.1",
+    "ruff==0.5.3",
 ]
 readme = "README.md"
 requires-python = ">= 3.10"
@@ -21,8 +30,7 @@ requires-python = ">= 3.10"
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
-[tool.rye]
-managed = true
+[tool.uv]
 dev-dependencies = [
     "ipykernel>=6.29.5",
     "ipywidgets>=8.1.3",
@@ -46,10 +54,6 @@ ignore = [
 include = ["*.ipynb", "*.py"]
 line-length = 120
 
-[tool.rye.scripts]
-format = { chain = [ "format:ruff", "format:ruff_check" ] }
-"format:ruff" = "ruff format ./"
-"format:ruff_check" = "ruff check ./ --fix"
 
 [tool.hatch.metadata]
 allow-direct-references = true
